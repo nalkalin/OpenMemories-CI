@@ -35,7 +35,7 @@ jobs:
     - name: Decrypt firmware files
       run: |
         for f in $(find firmware -type f -name '*.enc'); do
-          openssl aes-256-cbc -d -k "$FIRMWARE_KEY" -in $f -out ${f%.enc}
+          openssl aes-256-cbc -d -pbkdf2 -k "$FIRMWARE_KEY" -in $f -out ${f%.enc}
         done
       env:
         FIRMWARE_KEY: ${{ secrets.FIRMWARE_KEY }}
