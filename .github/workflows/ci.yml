@@ -35,7 +35,7 @@ jobs:
     - name: Decrypt firmware files
       run: |
         for f in $(find firmware -type f -name '*.enc'); do
-          openssl aes-256-cbc -d -pbkdf2 -iter 100000 -pass pass:8DE5A856D2EE76E06C45DD9F5712C63A0ADB05C1AF808FC3977B2187752269DE83CCA6C612F0DC49 -in $f -out ${f%.enc}
+          openssl aes-256-cbc -d -pbkdf2 -iter 100000 -pass pass:E7CEEAF000DAEB4A00213B28EF5DDEC3FACF3C845EA6783DFFA177889E47F4FAF0D9717A4AC390CF -in $f -out ${f%.enc}
         done
       env:
         FIRMWARE_KEY: ${{ secrets.FIRMWARE_KEY }}
