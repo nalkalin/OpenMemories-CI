@@ -14,7 +14,8 @@ jobs:
         pip install -r requirements.txt
     - name: Install qemu
       run: |
-        sudo apt-get install libjpeg-dev libmad0-dev
+        sudo apt-get update # Good practice to update package lists
+        sudo apt-get install -y libglib2.0-dev libjpeg-dev libmad0-dev # Added libglib2.0-dev
         git clone --depth=1 https://github.com/ma1co/qemu.git qemu
         cd qemu
         ./configure --target-list=arm-softmmu --disable-docs --disable-tools --disable-user --disable-werror
