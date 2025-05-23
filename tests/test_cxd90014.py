@@ -9,8 +9,8 @@ class TestCXD90014(TestCase):
  MACHINE = 'cxd90014'
  NAND_SIZE = 0x4000000
 
- MODEL = 'DSC-RX100M5'
- FIRMWARE_DIR = 'firmware/DSC-RX100M5'
+ MODEL = 'ILCE-7RM2'
+ FIRMWARE_DIR = 'firmware/ILCE-7RM2'
 
  def readFirmwareFile(self, name):
   with open(os.path.join(self.FIRMWARE_DIR, name), 'rb') as f:
